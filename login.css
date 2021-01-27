@@ -2,10 +2,14 @@ body{
     background-color: rgb(255, 156, 126);
 }
 
-.login-page {
+.container{
     width: 360px;
     padding: 10% 0 0;
     margin: auto;
+}
+
+.form-hidden{
+    display: none;
 }
 
 .form {
@@ -16,6 +20,7 @@ body{
     margin: 0 auto 100px;
     padding: 45px;
     text-align: center;
+    border-radius: 4px;
 }
 
 .form input {
@@ -28,6 +33,7 @@ body{
     padding: 15px;
     box-sizing: border-box;
     font-size: 14px;
+    border-radius: 4px;
 }
 
 .form button {
@@ -41,22 +47,25 @@ body{
     color: #ffffff;
     font-size: 14px;
     cursor: pointer;
+    border-radius: 4px;
 }
 
 .form button:hover,.form button:active {
     background: #43a047;
 }
 
-.form .message {
-    margin: 15px 0 0;
-    color: rgb(73, 73, 73);
-    font-size: 13px;
+.form_message-success{
+    color: yellowgreen;
 }
 
-.form .message a {
-    color: rgb(117, 117, 117);
+.form_message-error{
+    color: rgb(202, 50, 50);
 }
 
-.form .register-form {
-    display: none;
+.form_link{
+    cursor: pointer;
+}
+
+.form_link:hover{
+    text-decoration: underline;
 }
