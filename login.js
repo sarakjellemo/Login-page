@@ -50,6 +50,7 @@ document.getElementById("loginBtn").addEventListener("click", function(){
             return
         }
     } 
+    document.getElementById("error").innerHTML = "Incorrect username or password";
     console.log("incorrect username or password");   
 });
 
