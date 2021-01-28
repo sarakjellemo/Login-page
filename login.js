@@ -38,21 +38,33 @@ let getFromStorage = localStorage.getItem("users");
 let getusers = JSON.parse(getFromStorage);
 console.log("Hämtad array", getusers);
 
-document.getElementById("loginBtn").addEventListener("click", function(){
-    
+document.getElementById("loginBtn").addEventListener("click", e =>{
     var userName = document.getElementById("usInput").value
     var userPassword = document.getElementById("psInput").value
-    console.log("you're username is "+ userName + " and your pasword is " + userPassword);
-
+    // console.log("you're username is "+ userName + " and your pasword is " + userPassword);
+    //let loginForm = document.querySelector("#login");
     for (i = 0; i <users.length; i++) {
         if(userName == users[i].userName && userPassword == users[i].userPassword) {
+             e.preventDefault();
+            loginForm.classList.add("form-hidden");
+            homepageForm.classList.remove("form-hidden");
             console.log(userName + " is logged in!");
             return
         }
     } 
+    e.preventDefault();
     document.getElementById("error").innerHTML = "Incorrect username or password";
-    console.log("incorrect username or password");   
+    // console.log("incorrect username or password");   
 });
+
+let homepageForm = document.querySelector("#homePG");
+
+// var start = document.getElementById("startPage");
+// start.insertAdjacentHTML("afterbegin", <p>hejan</p>);
+// console.log(start, "START")
+
+
+//homepage.insertAdjacentHTML("beforebegin", <p>hejsan</p>);
 
 // document.getElementById("loginBtn").addEventListener("click", function() {
 //     console.log("klick");
@@ -82,9 +94,9 @@ document.getElementById("loginBtn").addEventListener("click", function(){
 //  setFormMessage(loginForm, "success", "You're logged in!")
 
 console.log("Hallå");
-    const loginForm = document.querySelector("#login");
+    let loginForm = document.querySelector("#login");
     console.log(loginForm);
-    const createAccountForm = document.querySelector("#createAccount");
+    let createAccountForm = document.querySelector("#createAccount");
     console.log(createAccountForm);
 
 //byter från login läge till create account
