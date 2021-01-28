@@ -1,5 +1,4 @@
 
-
 //skapa addEventlisterner på knapp 
 document.getElementById("createAccountBtn").addEventListener("click", function() {
     console.log("click");
@@ -48,8 +47,10 @@ document.getElementById("loginBtn").addEventListener("click", e =>{
              e.preventDefault();
             loginForm.classList.add("form-hidden");
             homepageForm.classList.remove("form-hidden");
+            // document.getElementById("welcome").innerHTML="";
+            document.getElementById("welcome").insertAdjacentHTML("beforeend", "Welcome " + userName );
             console.log(userName + " is logged in!");
-            return
+            return 
         }
     } 
     e.preventDefault();
@@ -59,9 +60,10 @@ document.getElementById("loginBtn").addEventListener("click", e =>{
 
 let homepageForm = document.querySelector("#homePG");
 
-// var start = document.getElementById("startPage");
-// start.insertAdjacentHTML("afterbegin", <p>hejan</p>);
-// console.log(start, "START")
+
+//   var start = document.getElementById("startPage");
+//  start.insertAdjacentHTML("afterbegin", <p>hejan</p>);
+//  console.log(start, "START")
 
 
 //homepage.insertAdjacentHTML("beforebegin", <p>hejsan</p>);
