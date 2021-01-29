@@ -1,26 +1,4 @@
 
-// skapa addEventlisterner på knapp 
-// document.getElementById("createAccountBtn").addEventListener("click", function() {
-//     console.log("click");
-
-// //local storage från array som skapas i input
-//  //function save(){
-//     //hämta data från input fälten 
-//     var new_data = document.getElementById('inputUserName').value;
-//     var new_data = document.getElementById('inputPassword').value;
-//     //om det inte är något sparat från start, spara en tom array
-//     if(localStorage.getItem("data") == null){
-//         localStorage.setItem("data",'[]');
-//     }
-//     //get old data and slap it to the new data
-//     var old_data = JSON.parse(localStorage.getItem("data"));
-//     old_data.push(new_data);
-    
-//     //save the old data + new data to local storage
-//     localStorage.setItem("data", JSON.stringify(old_data));
-// }
-// });
-
 let users = [
     {userName: "Sara", userPassword: "Kjellemo"},
     {userName: "Janne", userPassword: "Test"},
@@ -28,7 +6,6 @@ let users = [
     {userName: "Helena", userPassword: "Test3"}
     
 ];
-
 
 const addUsers = e=>{
     e.preventDefault();
@@ -47,40 +24,6 @@ document.addEventListener('DOMContentLoaded', ()=>{
     document.getElementById("createAccountBtn").addEventListener('click', addUsers);
 });
 
-// console.log("användare", users);
-
-// let saveToJson = JSON.stringify(users)
-
-// console.log("JSON", saveToJson);
-
-// localStorage.setItem("users", saveToJson);
-
-// let getFromStorage = localStorage.getItem("users");
-
-// let getusers = JSON.parse(getFromStorage);
-
-// console.log("Hämtad array", getusers);
-
-// getusers.push({userName: "Maria", userPassword: "Johansson"});
-
-// localStorage.setItem("users", JSON.stringify(getusers));
-
-// var user = document.getElementById('inputUserName').value;
-// var password = document.getElementById('inputPassword').value;
-
-// document.getElementById("createAccountBtn").addEventListener("click", function() {
-//     console.log("click")
-   
-//     // console.log(password, "password");
-//     function addUser(user, password){
-//     var user = document.getElementById('inputUserName').value;
-//     var password = document.getElementById('inputPassword').value;
-//     let newUser = {userName: user, userPassword: password};
-//     let getusers = JSON.parse(localStorage.getItem("users"));
-//     getusers.push(newUser);
-//     localStorage.setItem("users", JSON.stringify(getusers));
-// }
-// });
 
 let loggedInUser = [{userName: "", userPassword: ""}];
 
@@ -88,7 +31,6 @@ document.getElementById("loginBtn").addEventListener("click", e =>{
     var userName = document.getElementById("usInput").value
     var userPassword = document.getElementById("psInput").value
     // console.log("you're username is "+ userName + " and your pasword is " + userPassword);
-    //let loginForm = document.querySelector("#login");
     for (i = 0; i <users.length; i++) {
         if(userName == users[i].userName && userPassword == users[i].userPassword) {
 
@@ -108,40 +50,6 @@ document.getElementById("loginBtn").addEventListener("click", e =>{
 
 let homepageForm = document.querySelector("#homePG");
 
-
-//   var start = document.getElementById("startPage");
-//  start.insertAdjacentHTML("afterbegin", <p>hejan</p>);
-//  console.log(start, "START")
-
-
-//homepage.insertAdjacentHTML("beforebegin", <p>hejsan</p>);
-
-// document.getElementById("loginBtn").addEventListener("click", function() {
-//     console.log("klick");
-//     existinglist = JSON.parse(localStorage["data"]);
-//   var uninput = document.getElementById('usInput').value;
-//   var pwinput = document.getElementById('psInput').value;
-//   for (var i=0; i <data.length; i++){
-//       if (uninput == data[i]['usInput'] && pwinput == data[i]['psInput']){
-//           Credential.alert('You have login succesfully');
-//           break;
-//       }   else {
-//           alert('Invalid login');
-//       }
-//   }
-
-// });
-
-
-// function setFormMessage(formElement, type, message){
-//     const messageElement = formElement.querySelector(".form_message");
-    
-//     messageElement.textContent = message;
-//     messageElement.classList.remove("form_message-success", "form_message-error")
-//     messageElement.classList.add(`form_message-${type}`);
-// }
-
-//  setFormMessage(loginForm, "success", "You're logged in!")
 
 console.log("Hallå");
     let loginForm = document.querySelector("#login");
@@ -163,12 +71,4 @@ console.log("Hallå");
         createAccountForm.classList.add("form-hidden");
     });
 
-    //loginForm.addEventListener("submit", e => {
-     //  e.preventDefault();
-
-        //Lägg till det man ser när man loggar in beroende på value, om det funkar eller inte
-
-       // setFormMessage(loginForm, "error", "Invalid username/password combination");
-  // });
-//});
 
