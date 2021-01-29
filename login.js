@@ -23,7 +23,7 @@ document.getElementById("createAccountBtn").addEventListener("click", function()
 
 var users = [
     {userName: "Sara", userPassword: "Kjellemo"},
-    {userName: "Janne", userPassword: "Kemi"}
+    {userName: "Janne", userPassword: "Test"}
 ];
 console.log("användare", users);
 
