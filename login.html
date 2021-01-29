@@ -32,20 +32,13 @@
 
         <form class="form form-hidden" id="createAccount">
             <h1 class="form_title">Create Account</h1>
-            <div id="userAdded"></div>
-            <div class="form_message form_message-error"></div>
+            <div class="usAdded" id="userAdded"></div>
             <div class="form_input-group">
                 <input type="text" class="form_input" id="inputUserName" autofocus placeholder="Username">
-                <div class="form_input-error-message"></div>
             </div>
 
             <div class="form_input-group">
                 <input type="text" class="form_input" id="inputPassword" autofocus placeholder="Password">
-                <div class="form_input-error-message"></div>
-            </div>
-
-            <div id="msg">
-                <pre></pre>
             </div>
 
             <button class="form_button" id="createAccountBtn" type="submit">Continue</button>
@@ -57,13 +50,15 @@
 
     <div class="startPage">
         <form class="homepage form-hidden" id="homePG">
-            <h1>Välkommen</h1>
+            <h1 class="h1">Welcome</h1>
             <div class="styleWelcome" id="welcome"></div>
             <button class="logoutBtn" id="loBtn">Log out</button>
         </form>
     </div>
 
-    <footer>This page is made by Sara Kjellemo</footer>
+    <footer>
+        <p class="footerText">This page is made by Sara Kjellemo</p>
+    </footer>
 
     <script src="login.js"></script>
 </body>

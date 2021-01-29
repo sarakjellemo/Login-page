@@ -23,7 +23,10 @@
 
 let users = [
     {userName: "Sara", userPassword: "Kjellemo"},
-    {userName: "Janne", userPassword: "Test"}
+    {userName: "Janne", userPassword: "Test"},
+    {userName: "Karl", userPassword: "Test2"},
+    {userName: "Helena", userPassword: "Test3"}
+    
 ];
 
 
@@ -36,8 +39,7 @@ const addUsers = e=>{
     users.push(inputUsers);
     document.forms[0].reset();
 
-    document.getElementById("userAdded").innerHTML = "New account is added"
-
+    document.getElementById("userAdded").innerHTML = "New account is added!"  
     localStorage.setItem("users", JSON.stringify(users));
     
 }
@@ -80,7 +82,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
 // }
 // });
 
-
+let loggedInUser = [{userName: "", userPassword: ""}];
 
 document.getElementById("loginBtn").addEventListener("click", e =>{
     var userName = document.getElementById("usInput").value
@@ -89,11 +91,12 @@ document.getElementById("loginBtn").addEventListener("click", e =>{
     //let loginForm = document.querySelector("#login");
     for (i = 0; i <users.length; i++) {
         if(userName == users[i].userName && userPassword == users[i].userPassword) {
-             e.preventDefault();
+
+             localStorage.setItem("loggedInUser", JSON.stringify (userName));
+            e.preventDefault();
             loginForm.classList.add("form-hidden");
             homepageForm.classList.remove("form-hidden");
-            // document.getElementById("welcome").innerHTML="";
-            document.getElementById("welcome").insertAdjacentHTML("beforeend", "Welcome " + userName );
+            document.getElementById("welcome").insertAdjacentHTML("beforeend", userName + " is now logged in" );
             console.log(userName + " is logged in!");
             return 
         }

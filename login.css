@@ -1,10 +1,14 @@
 body{
-    background-color: rgb(255, 141, 47);
+    background-image: url(img/snow.png);
+    background-size: cover;
+    height: 90vh;
+    width: 100vw;
+    background-repeat: no-repeat;
     margin: 0;
 }
 
 header{
-    background: rgb(211, 211, 211);
+    background: rgb(212, 212, 212);
     margin: 0;
     padding: 10px;
     text-align: center;
@@ -58,14 +62,12 @@ header{
     font-size: 14px;
     cursor: pointer;
     border-radius: 4px;
+    font-weight: bold;
+
 }
 
 .form button:hover,.form button:active {
     background: #43a047;
-}
-
-.form_message-success{
-    color: yellowgreen;
 }
 
 .form_message-error{
@@ -88,18 +90,29 @@ header{
     padding: 45px;
     text-align: center;
     border-radius: 4px;
+    font-size: 25px;
+}
 
+.h1{
+    color: rgb(230, 230, 230);
+    letter-spacing: 6px;
+    position: relative;
+    top: 60px;
 }
 
 .styleWelcome{
     font-size: 20px;
+    font-family: "Roboto", sans-serif; 
+    color: rgb(230, 230, 230);
+    position: relative;
+    top: 30px;
 }
 
 .logoutBtn{
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     outline: 0;
-    background: #7c7c7c;
+    background: rgb(30, 34, 63);
     width: 120px;
     border: 0;
     padding: 15px;
@@ -107,19 +120,34 @@ header{
     font-size: 14px;
     cursor: pointer;
     border-radius: 4px;
+    position: relative;
+    top: 100px;
 }
 
 .logoutBtn:hover{
-    background:rgb(149, 149, 149) ;
+    background: rgb(39, 45, 83);
 }
 
 footer{
-    background: rgb(44, 44, 44);
+    background: rgb(23, 26, 49);
     color: rgb(199, 199, 199);
     margin: 0;
-    padding: 20px;
+    padding: 15px;
     position: absolute;
     text-align: center;
     width: 100%;
     bottom: 0px;
+} 
+
+.footerText{
+    position: relative;
+    right: 10px;
+}
+
+.usAdded{
+    font-family: "Roboto", sans-serif;
+    padding: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #3c8f41;
 }
