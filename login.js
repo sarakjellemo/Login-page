@@ -1,41 +1,88 @@
 
-//skapa addEventlisterner på knapp 
-document.getElementById("createAccountBtn").addEventListener("click", function() {
-    console.log("click");
+// skapa addEventlisterner på knapp 
+// document.getElementById("createAccountBtn").addEventListener("click", function() {
+//     console.log("click");
 
-//local storage från array som skapas i input
- //function save(){
-    //hämta data från input fälten 
-    var new_data = document.getElementById('inputUserName').value;
-    var new_data = document.getElementById('inputPassword').value;
-    //om det inte är något sparat från start, spara en tom array
-    if(localStorage.getItem("data") == null){
-        localStorage.setItem("data",'[]','[]');
-    }
-    //get old data and slap it to the new data
-    var old_data = JSON.parse(localStorage.getItem("data"));
-    old_data.push(new_data);
+// //local storage från array som skapas i input
+//  //function save(){
+//     //hämta data från input fälten 
+//     var new_data = document.getElementById('inputUserName').value;
+//     var new_data = document.getElementById('inputPassword').value;
+//     //om det inte är något sparat från start, spara en tom array
+//     if(localStorage.getItem("data") == null){
+//         localStorage.setItem("data",'[]');
+//     }
+//     //get old data and slap it to the new data
+//     var old_data = JSON.parse(localStorage.getItem("data"));
+//     old_data.push(new_data);
     
-    //save the old data + new data to local storage
-    localStorage.setItem("data", JSON.stringify(old_data));
-//}
-});
+//     //save the old data + new data to local storage
+//     localStorage.setItem("data", JSON.stringify(old_data));
+// }
+// });
 
-var users = [
+let users = [
     {userName: "Sara", userPassword: "Kjellemo"},
     {userName: "Janne", userPassword: "Test"}
 ];
-console.log("användare", users);
 
-let saveToJson = JSON.stringify(users)
-console.log("JSON", saveToJson);
 
-localStorage.setItem("users", saveToJson);
+const addUsers = e=>{
+    e.preventDefault();
+    let inputUsers = {
+        userName: document.getElementById("inputUserName").value,
+        userPassword: document.getElementById("inputPassword").value
+    }
+    users.push(inputUsers);
+    document.forms[0].reset();
 
-let getFromStorage = localStorage.getItem("users");
+    // console.log("added", {users});
+    // let pre = document.querySelector('#msg pre');
+    // pre.textContent = '\n' + JSON.stringify(users,'\t',2);
 
-let getusers = JSON.parse(getFromStorage);
-console.log("Hämtad array", getusers);
+    localStorage.setItem("users", JSON.stringify(users));
+    
+}
+document.addEventListener('DOMContentLoaded', ()=>{
+    document.getElementById("createAccountBtn").addEventListener('click', addUsers);
+});
+
+// console.log("användare", users);
+
+// let saveToJson = JSON.stringify(users)
+
+// console.log("JSON", saveToJson);
+
+// localStorage.setItem("users", saveToJson);
+
+// let getFromStorage = localStorage.getItem("users");
+
+// let getusers = JSON.parse(getFromStorage);
+
+// console.log("Hämtad array", getusers);
+
+// getusers.push({userName: "Maria", userPassword: "Johansson"});
+
+// localStorage.setItem("users", JSON.stringify(getusers));
+
+// var user = document.getElementById('inputUserName').value;
+// var password = document.getElementById('inputPassword').value;
+
+// document.getElementById("createAccountBtn").addEventListener("click", function() {
+//     console.log("click")
+   
+//     // console.log(password, "password");
+//     function addUser(user, password){
+//     var user = document.getElementById('inputUserName').value;
+//     var password = document.getElementById('inputPassword').value;
+//     let newUser = {userName: user, userPassword: password};
+//     let getusers = JSON.parse(localStorage.getItem("users"));
+//     getusers.push(newUser);
+//     localStorage.setItem("users", JSON.stringify(getusers));
+// }
+// });
+
+
 
 document.getElementById("loginBtn").addEventListener("click", e =>{
     var userName = document.getElementById("usInput").value

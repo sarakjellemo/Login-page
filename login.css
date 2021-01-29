@@ -1,12 +1,12 @@
 body{
-    background-color: rgb(255, 156, 126);
+    background-color: rgb(255, 141, 47);
     margin: 0;
 }
 
 header{
-    background: gray;
+    background: rgb(211, 211, 211);
     margin: 0;
-    padding: 40px;
+    padding: 10px;
     text-align: center;
 }
 
@@ -92,7 +92,7 @@ header{
 }
 
 .styleWelcome{
-    font-size: 40px;
+    font-size: 20px;
 }
 
 .logoutBtn{
@@ -114,7 +114,8 @@ header{
 }
 
 footer{
-    background: gray;
+    background: rgb(44, 44, 44);
+    color: rgb(199, 199, 199);
     margin: 0;
     padding: 20px;
     position: absolute;
