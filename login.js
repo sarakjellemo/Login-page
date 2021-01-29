@@ -36,9 +36,7 @@ const addUsers = e=>{
     users.push(inputUsers);
     document.forms[0].reset();
 
-    // console.log("added", {users});
-    // let pre = document.querySelector('#msg pre');
-    // pre.textContent = '\n' + JSON.stringify(users,'\t',2);
+    document.getElementById("userAdded").innerHTML = "New account is added"
 
     localStorage.setItem("users", JSON.stringify(users));
     
