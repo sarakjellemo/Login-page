@@ -7,40 +7,44 @@ let users = [
     
 ];
 
+//CREATE NEW ACCOUNT
 const addUsers = e=>{
     e.preventDefault();
     let inputUsers = {
         userName: document.getElementById("inputUserName").value,
         userPassword: document.getElementById("inputPassword").value
     }
+    if(inputUserName.value && inputPassword.value){
     users.push(inputUsers);
     document.forms[0].reset();
-
     document.getElementById("userAdded").innerHTML = "New account is added!"  
     localStorage.setItem("users", JSON.stringify(users));
+    }
     
 }
 document.addEventListener('DOMContentLoaded', ()=>{
     document.getElementById("createAccountBtn").addEventListener('click', addUsers);
 });
 
-
+//LOGIN PAGE 
 let loggedInUser = [{userName: "", userPassword: ""}];
 
 document.getElementById("loginBtn").addEventListener("click", e =>{
     var userName = document.getElementById("usInput").value
     var userPassword = document.getElementById("psInput").value
-    // console.log("you're username is "+ userName + " and your pasword is " + userPassword);
-    for (i = 0; i <users.length; i++) {
-        if(userName == users[i].userName && userPassword == users[i].userPassword) {
+    let storedUsers = JSON.parse(localStorage.getItem("users"));
 
-             localStorage.setItem("loggedInUser", JSON.stringify (userName));
-            e.preventDefault();
-            loginForm.classList.add("form-hidden");
-            homepageForm.classList.remove("form-hidden");
-            document.getElementById("welcome").insertAdjacentHTML("beforeend", userName + " is now logged in" );
-            console.log(userName + " is logged in!");
-            return 
+    // console.log("you're username is "+ userName + " and your pasword is " + userPassword);
+    for (i = 0; i <storedUsers.length; i++) {
+        if(userName == storedUsers[i].userName && userPassword == storedUsers[i].userPassword) {
+          localStorage.setItem("loggedInUser", JSON.stringify (userName));
+          e.preventDefault();
+
+          loginForm.classList.add("form-hidden");
+          homepageForm.classList.remove("form-hidden");
+          document.getElementById("welcome").insertAdjacentHTML ("beforeend", userName + " is now logged in" );
+          console.log(userName + " is logged in!");
+          return 
         }
     } 
     e.preventDefault();
@@ -48,9 +52,8 @@ document.getElementById("loginBtn").addEventListener("click", e =>{
     // console.log("incorrect username or password");   
 });
 
+//SWICH FROM LOGIN PAGE TO CREATE ACCOUNT PAGE 
 let homepageForm = document.querySelector("#homePG");
-
-
 console.log("Hallå");
     let loginForm = document.querySelector("#login");
     console.log(loginForm);
